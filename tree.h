@@ -1,5 +1,8 @@
 #include "Data.h"
 
+#ifndef NODE_T
+#define NODE_T
+
 typedef struct Node
 {
     struct Node *left;  // left son
@@ -21,3 +24,5 @@ void preOrder(Node *root);
 void inOrder(Node *root);
 
 void postOrder(Node *root);
+
+#endif
