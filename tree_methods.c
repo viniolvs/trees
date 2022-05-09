@@ -75,3 +75,30 @@ void postOrder(Node *root)
         printData(*root->data);    
     }
 }
+
+//NOT WORKING
+Node* minimum(Node *root)
+{
+    Node *ptr = root, *l, *r;
+    if (ptr!=NULL)
+    {
+        if(ptr->right)
+            r = minimum(ptr->right);
+        if(ptr->left)
+            l = minimum(ptr->left);    
+    }
+    else 
+    {   
+        if(l != NULL && r != NULL)
+        {
+            if(cmpData(*l->data, *r->data) == 1)
+                return r;
+            else if (cmpData(*l->data, *r->data) == 2)
+                return l;
+        }
+        else if(r && l==NULL)
+            return r;
+        else 
+            return l;
+    }
+}

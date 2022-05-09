@@ -13,6 +13,6 @@ void readData(Data *data);
 
 void randomData(Data *data);
 
-void newData(Data *data);
+short cmpData(Data a, Data b);
 
 #endif

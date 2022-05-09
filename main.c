@@ -2,14 +2,21 @@
 #include <stdlib.h>
 #include "tree.h"
 #include "bin_tree.h"
+#include "search_tree.h"
 
 int main(int argc, char const *argv[])
 {
-    Node *root;
-    root = newBinTree(10,1);
-    Data *data;
+    Node *root = NULL;
+    Data d;
+    int i;
+    for(i = 0; i < 20; i++)
+    {    
+        readData(&d);
+        root = insertSearchTree(root, d);
+    }
+
     
-    printTree(root, root->height);
+    printTree(root, getHeight(root));
     printf("\n");
     preOrder(root);
     printf("\n");
@@ -17,5 +24,11 @@ int main(int argc, char const *argv[])
     printf("\n");
     postOrder(root);
     printf("\n");
+
+    Node *ptr = root;
+    ptr = minimum(ptr);
+    if(ptr != NULL);
+        printData(*ptr->data);
+
     return 0;
 }

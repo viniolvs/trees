@@ -25,4 +25,6 @@ void inOrder(Node *root);
 
 void postOrder(Node *root);
 
+Node* minimum(Node *root);
+
 #endif
