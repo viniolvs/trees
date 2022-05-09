@@ -1,27 +1,32 @@
 #include "Data.h"
+#include "tree.h"
+#include <stdio.h>
+#include <stdlib.h>
 
-typedef struct Node
-{
-    struct Node *left;  // left son
-    struct Node *right; // right son
+Node* newBinTree(int num_node, int random)
+{	
+	if (num_node == 0)
+		return NULL;
+
+	int left_nodes = num_node/2;
+	int right_nodes = num_node - left_nodes - 1;
+
+    Node *new;
     Data *data;
-    int height; 
-}Node;
+    new = (Node*)malloc(sizeof(Node));
+    data = (Data*)malloc(sizeof(Data));
+    
+    if(random)
+        randomData(data);
+    else
+        readData(data);
 
-void printTree(Node *root, int level);
-
-int bigger(int a, int b);
-
-int getHeight(Node *node);
-
-void setHeight(Node *root);
-
-Node* newBinTree(int num_node, int random);
-
-void preOrder(Node *root);
-
-void inOrder(Node *root);
-
-void postOrder(Node *root);
+    new->data = data;
+    setHeight(new);
+	new->left = newBinTree(left_nodes, random);
+	new->right = newBinTree(right_nodes, random);
+	
+	return new;
+}
 
 
