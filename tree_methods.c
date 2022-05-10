@@ -76,29 +76,33 @@ void postOrder(Node *root)
     }
 }
 
-//NOT WORKING
 Node* minimum(Node *root)
 {
-    Node *ptr = root, *l, *r;
-    if (ptr!=NULL)
+    Node *ptr = root, *l = NULL, *r = NULL, *minor = NULL;
+    if (ptr->left == NULL && ptr->right == NULL)
+        return ptr;
+    else
     {
         if(ptr->right)
             r = minimum(ptr->right);
         if(ptr->left)
-            l = minimum(ptr->left);    
-    }
-    else 
-    {   
+            l = minimum(ptr->left);
+
         if(l != NULL && r != NULL)
         {
             if(cmpData(*l->data, *r->data) == 1)
-                return r;
+                minor = r;
             else if (cmpData(*l->data, *r->data) == 2)
-                return l;
+                minor = l;
         }
-        else if(r && l==NULL)
-            return r;
-        else 
-            return l;
+        else if(r != NULL && l==NULL)
+            minor = r;
+        else
+            minor = l;
+
+        if (cmpData(*ptr->data, *minor->data) == 2)
+            minor = ptr;
+
+        return minor;
     }
 }
