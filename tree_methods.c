@@ -76,6 +76,7 @@ void postOrder(Node *root)
     }
 }
 
+//returns the node with de smallest value in a tree
 Node* minimum(Node *root)
 {
     Node *ptr = root, *l = NULL, *r = NULL, *minor = NULL;
