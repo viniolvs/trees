@@ -1,4 +1,4 @@
-#include "bin_tree.h"
+#include "tree.h"
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -25,6 +25,14 @@ int bigger(int a, int b)
         return a;
     else 
         return b;
+}
+
+int module(int a)
+{
+    if(a < 0)
+        return (a * -1);
+    else 
+        return a;
 }
 
 int getHeight(Node *node)

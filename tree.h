@@ -15,6 +15,8 @@ void printTree(Node *root, int level);
 
 int bigger(int a, int b);
 
+int module(int a);
+
 int getHeight(Node *node);
 
 void setHeight(Node *root);

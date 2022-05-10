@@ -1,0 +1,1 @@
+gcc -g main.c bin_tree_methods.c tree_methods.c search_tree_methods.c data_methods.c avl_tree_methods.c -o main
