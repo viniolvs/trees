@@ -34,7 +34,7 @@ Node* double_rotation_left(Node *root)
 
 Node* double_rotation_right(Node *root)
 {
-    root->left = rotation_left(root->left);
+    root->right = rotation_left(root->right);
     return rotation_right(root);
 }
 

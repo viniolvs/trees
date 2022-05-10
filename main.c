@@ -20,7 +20,7 @@ int main(int argc, char const *argv[])
     d.info = 5;
     root = insertAVL(root, d);
     d.info = 6;
-    root = insertAVL(root, d);
+    /*root = insertAVL(root, d);
     d.info = 7;
     /*root = insertAVL(root, d);
     d.info = 11;
